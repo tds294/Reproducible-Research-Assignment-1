@@ -173,11 +173,4 @@ datasetWithoutNA <- sqldf(c("update datasetWithoutNA set day = 'weekday' where d
 
 groupedByWeekday <- aggregate(steps ~ interval + day, data = datasetWithoutNA, mean)
 
-png("figure/weekendsPlot.png")
-xyplot(steps ~ interval | day, data = groupedByWeekday, layout=c(1,2), type = "l")
-dev.off()
-```
-xyplot(steps_by_interval_i$steps ~ steps_by_interval_i$interval|steps_by_interval_i$dow, main="Average Steps per Day by Interval",xlab="Interval", ylab="Steps",layout=c(1,2), type="l")
-
-```
 
